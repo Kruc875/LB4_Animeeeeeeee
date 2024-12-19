@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace LB4_Animeeeeeeee;
+namespace LB4_Animeeeeeeee.Models;
 
-public partial class AnimeTitlesContext : DbContext
+public partial class AppContext : DbContext
 {
-    public AnimeTitlesContext()
+    public AppContext()
     {
     }
 
-    public AnimeTitlesContext(DbContextOptions<AnimeTitlesContext> options)
+    public AppContext(DbContextOptions<AppContext> options)
         : base(options)
     {
     }
-
+    //свойства 
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
 
     public virtual DbSet<AnimeType> AnimeTypes { get; set; }
@@ -23,6 +23,7 @@ public partial class AnimeTitlesContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    //переопределения методов
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=AnimeTitles;Username=postgres;Password=1111");

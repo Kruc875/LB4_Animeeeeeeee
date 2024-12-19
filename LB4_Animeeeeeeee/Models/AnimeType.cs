@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LB4_Animeeeeeeee;
+namespace LB4_Animeeeeeeee.Models;
 
 public partial class AnimeType
 {
@@ -9,5 +9,6 @@ public partial class AnimeType
 
     public string AnimeOfType { get; set; } = null!;
 
+    //навигационное свойство
     public virtual ICollection<AnimeTitle> AnimeTitles { get; set; } = new List<AnimeTitle>();
 }

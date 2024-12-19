@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LB4_Animeeeeeeee;
+namespace LB4_Animeeeeeeee.Models;
 
 public partial class AnimeTitle
 {
@@ -31,9 +31,10 @@ public partial class AnimeTitle
 
     public string Studio { get; set; } = null!;
 
-    public virtual Genre IdGenreNavigation { get; set; } = null!;
+    //навигационное свойство
+    public virtual Genre Genre { get; set; } = null!;
 
-    public virtual User IdModeratorNavigation { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 
-    public virtual AnimeType IdTypeOfAnimeNavigation { get; set; } = null!;
+    public virtual AnimeType AnimeType { get; set; } = null!;
 }
