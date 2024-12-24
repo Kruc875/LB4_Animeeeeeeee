@@ -84,6 +84,7 @@
             button1.TabIndex = 1;
             button1.Text = "Добавить";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panelFill
             // 
@@ -121,7 +122,6 @@
             Margin = new Padding(5);
             Name = "Form1";
             Text = "Пользователи";
-            Load += Form1_Load;
             flowLayoutPanelTop.ResumeLayout(false);
             panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewFill).EndInit();

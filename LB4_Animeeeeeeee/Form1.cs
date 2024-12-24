@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using AppContext = LB4_Animeeeeeeee.Models.AppContext;
 namespace LB4_Animeeeeeeee
 {
@@ -22,7 +23,14 @@ namespace LB4_Animeeeeeeee
             //изменение названий заголовка столбцов
             dataGridViewFill.Columns["AnimeOfType"].HeaderText = "Тип";
         }
-        private void Form1_Load(object sender, EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            this.db?.Dispose();
+            this.db = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
